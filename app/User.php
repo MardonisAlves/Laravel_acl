@@ -42,11 +42,11 @@ class User extends Authenticatable
     public function hasAnyRoles($roles)
     {
         if(is_array($roles) || is_object($roles)){
-            foreach($roles as $role){
-
-                //dd( $this->roles->contains('name' , $role->name));
-                return $this->roles->contains('name' , $role->name);
-            }
+            return $roles->intersect($this->roles)->count();
+            //foreach($roles as $role){
+            //dd( $this->roles->contains('name' , $role->name));
+            //return $this->roles->contains('name' , $role->name);
+            //}
         }
                 return $this->roles->contains('name' , $roles);
         
