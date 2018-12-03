@@ -1,36 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Portal;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Notices;
 use Gate;
 use App\Permission;
 use App\User;
-class HomeController extends Controller
+class SiteController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Notices $notice)
-    {
- 
-        $notices =  Notices::all();
-        //$notices = $notice->where('user_id', auth()->user()->id)->get();
-        return view('home' ,  compact('notices'));
-    
+public function index(Notices $notice)
+{
+    return view('Portal.home.index');
 }
 
     public function update( Notices $notice ,$idPost)
