@@ -110,7 +110,7 @@
 
         <div class="footer actions">
             <div class="container text-center">
-                <p class="footer">EspecializaTi - Todos os direitos reservados</p>
+                <p class="footer">Mardonis Alves B - Todos os direitos reservados</p>
             </div>
         </div>
 
